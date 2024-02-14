@@ -11,6 +11,7 @@ debug = DebugToolbarExtension(app)
 @app.get('/')
 def root_screen():
 		""" return initial screen of prompts for a static story"""
+		# TODO: use an API to getStories
 		html = render_template("questions.html", prompts=silly_story.prompts)
 		return html
 
