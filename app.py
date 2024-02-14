@@ -8,6 +8,16 @@ app.config['SECRET_KEY'] = "secret"
 
 debug = DebugToolbarExtension(app)
 
+# Project promoted from:
+# https://rithm-students-assets.s3.amazonaws.com/r32/exercises/flask-greet-calc/handout/index.html?AWSAccessKeyId=AKIA6I7NF475LYNA7YJL&Signature=VEY%2BrqzvkwyMhC0YnIZ1mAGvSvk%3D&Expires=1707903732
+
+# TODO: Allow User to pick story from home page
+# * dropdown menu of story templates
+# * after selection, goes to that page for prompts
+
+# TODO: create your own MadLIbs Page
+# * persist to database
+
 @app.get('/')
 def root_screen():
 		""" return initial screen of prompts for a static story"""
