@@ -18,11 +18,13 @@ class Story:
         'I love to eat a good mango.'
     """
 
-    def __init__(self, words, text):
+    def __init__(self, words, text, name="", blurb=""):
         """Create story with words and template text."""
 
         self.prompts = words
         self.template = text
+        self.title = name
+        self.description = blurb
 
     def get_result_text(self, answers):
         """Return result text from dictionary of {prompt: answer, ...}."""
@@ -40,7 +42,8 @@ class Story:
 silly_story = Story(
     ["place", "noun", "verb", "adjective", "plural_noun"],
     """Once upon a time, in a long-ago {place}, there lived an exceptionally
-       {adjective} {noun}. It loved to {verb} with {plural_noun}."""
+       {adjective} {noun}. It loved to {verb} with {plural_noun}.""",
+    "Silly Story"
 )
 
 # Here's another --- you should be able to swap in app.py to use this story,
@@ -48,16 +51,17 @@ silly_story = Story(
 
 excited_story = Story(
     ["noun", "verb"],
-    """OMG!! OMG!! I love to {verb} a {noun}!"""
+    """OMG!! OMG!! I love to {verb} a {noun}!""", "Excited Story"
 )
 
 # long_story = Story([],""" STORY_GOES_HERE {}""")
-vacation_story = Story(["adjective1", "adjective2", "noun1", "noun2",
-"plural_noun1","game", "plural_noun2", "verb_ending_in_ING_1",
-"verb_ending_in_ING_2", "plural_noun3", "verb_ending_in_ING_3", "noun3",
-"plant", "part_of_body","place", "verb_ending_in_ING_4", "adjective3",
-"number", "plural_noun4"],
-"""A vacation is when you take a trip to some {adjective1} place with your
+vacation_story = Story(
+    ["adjective1", "adjective2", "noun1", "noun2", "plural_noun1", "game",
+        "plural_noun2", "verb_ending_in_ING_1", "verb_ending_in_ING_2",
+        "plural_noun3", "verb_ending_in_ING_3", "noun3", "plant",
+        "part_of_body", "place", "verb_ending_in_ING_4", "adjective3",
+        "number", "plural_noun4"],
+    """A vacation is when you take a trip to some {adjective1} place with your
 {adjective2} family. Usually you go to some place that is near a/an {noun1} or
 up on a/an {noun2}. A good vacation place is one where you can ride
 {plural_noun1} or play {game} or go hunting for {plural_noun2} . I like to
@@ -70,4 +74,4 @@ got poison {plant} all over {part_of_body}. My family is going to go to (the)
 {place}, and I will practice {verb_ending_in_ING_4}. Parents need vacations
 more than kids because parents are always very {adjective3} and because they
 have to work {number} hours every day all year making enough {plural_noun4} to
-pay for the vacation.""")
+pay for the vacation.""", "Vacation Story")
